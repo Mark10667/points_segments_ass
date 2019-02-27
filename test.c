@@ -1,7 +1,6 @@
 #include "points_segments.h"
 
-int* q_result = NULL;
-int* n_result = NULL;
+
 
 void print_array(int *arr, int size){
 	for (int i=0; i<size; i++){
@@ -62,11 +61,12 @@ int main() {
 			//-for each point- the number of covering segments
 
 			//TODO: implement - compare these outputs from 2 algorithms
-			n_result = malloc(sizeof(int) * p);
-			ps_naive(s, p, segments, points);
+			int* q_result = NULL;
+			int* n_result = NULL;
 
-			q_result = malloc(sizeof(int) * p);
-			ps_qsort(s, p, segments, points);
+			n_result = ps_naive(s, p, segments, points);
+
+			q_result = ps_qsort(s, p, segments, points);
 
 			for(int i = 0; i < p; i++){
 				if(q_result[i] == n_result[i]){
