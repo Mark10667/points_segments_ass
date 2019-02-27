@@ -79,6 +79,11 @@ int main() {
 
 			free(n_result);
 			free(q_result);
+			for (int i=0; i < s; i++){
+				free(segments[i]);
+			}
+			free(segments);
+			free(points);
 
 		}
 		fclose(pfile);
