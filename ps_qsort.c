@@ -11,6 +11,20 @@ int compare(const void * pointone, const void * pointtwo){
   struct point * b = (struct point *)pointtwo;
   int c = a->position;
   int d = b->position;
+  if(c == d){
+    if(strcmp(a->name, "start") == 0 ){
+      return -1;
+    }
+    if(strcmp(b->name, "start") == 0 ){
+      return 1;
+    }
+    if(strcmp(a->name, "end") == 0  ){
+      return 1;
+    }
+    if(strcmp(b->name, "end") == 0 ){
+      return -1;
+    }
+  }
   return c - d;
 }
 
